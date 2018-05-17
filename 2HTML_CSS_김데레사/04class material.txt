@@ -1,0 +1,255 @@
+.wrapper
+  .header
+  h1.logo
+  ul.member
+  nav.navigation
+    h2.readable-hidden
+      "메인 메뉴"       // 다른 숨김처리 방법 스크린리더의 가상커서가 바깥쪽으로 가는 문제를 해결하기 위해
+        width & heigh 를 0으로, 텍스트노드는 살아 남음. 그래서 overflow: hidden
+        그러나 상자를 0으로 하면 컨텐츠를 가상커서가 탐지 못함 
+        -> 1px씩, bgc :red -> 빨간점처럼 남아서 clip: rect(0,0,0,0)   ***clip 앱솔루는일 때만 사용 가능 // 기준은 항상 x,y축 // clip은 대체될 예정 ->
+        -> 빨간점 사라짐(커팅) -> margin: -1px -> 변화는 없음
+        
+
+참고 modernizer
+
+.menu
+  메뉴에 배경 오렌지
+헤더에 패딩 좌우 30, 아래 50
+헤더 안에 "메뉴" 상자 테두리 적용방법 -> border / outline / box-shadow -> .menu로 가서 border"-top": 5px solid // dashed COLOR -> 실제로는 border box (명칭)
+outline: 10 dashed COLOR -> 실제 박스 크기에 영향 주지는 않음 -> 박스 밖에 적용됨
+outline-offset: -20px -> 기준점으로부터 얼마 떨어지나 
+outline은 키보드포커싱의 표시방법이기 때문에 top 등이 적용 안됨
+box-shadow : 0(X) 0(Y) 0(blur) 0(spread-그림자 번지기) COLOR + border 같이 그려보면 아웃라인처럼 보임
+      
+CSS를 사용한 배경/이미지 적용 (메뉴)
+bgc yellow
+bgi: url("images/*****.png") -> 배경색 위에 이미지 올라오는데 단일 이미지가 repeat됨 -> background repeat : no repeat -> BGP: X축 Y축 (%도 가능) 
+*** 백분율과 픽셀 방식 차이 -> 백분율 방식은 해당 이미지의 크기에 대한 백분율도 적용해서 배경의 백분율 지점과 일치하는 점을 기준으로 그려냄
+BGS contain -> 이미지가 상자만큼 커짐 // cover -> BGS 20px 20px 비트맵 크기 조절이기 때문에 해상도 문제 발생. 그래서 SVG 이용
+background: yellow url("images) no-repeat 50% 30% /200px 200px ->short hand 표기
+*** 모바일에서 단축표기 방법을 인식 못 할수도 있음 브라우저가 최근 방식을 구현 안했을수도 있음
+
+.wrapper
+BGI: url("images/*****.png)
+BGA: fixed -> default 는 scroll
+BGP: 50% 0; -> 뒤에 숨겨짐 -> 슬로건을 투명하게 만들 예정
+
+.menu
+BGC 오렌지
+BGI linear-gradient(red, green);
+BGI linear-gradient(to bottom/top/right/left/45deg/-45deg, red 0%, green 30%(여기서부터), blue 100%);
+BGI: repeating-linear-gradient(90deg, red 0, red 50px, green 50px, green 100px) -> 0~50 red 50~100 green
+      참고 코드 카피해서 붙여 넣기    참고.포토샵 CC
+BG linear-gradient()
+대표속성과 개별속성의 차이 중요! BG-image / BG-COLOR
+border-radius: 0 0 5px 5px; -> 0 0 100 100 /0 0 50 50 (단축 표기 방법)-> 앞이 x 뒤y, 앞뒤 각각 매칭
+border-bottom-right-radius: 100px 50px
+box-shadow: 0 20px 0 0 COLOR  -> shadow의 모서리 둥글게 아웃라인 방법은 적용 안됨
+
+.header
+border-radius: 0 0 15 15;
+.main -> 메인콘텐츠
+border-radius: 15 15 0 0;
+.menu
+COLOR:white;    ->sub-menu 까지 색깔 상속됨 그래서 다시 선언
+.menu-item-text
+COLOR:white;
+
+@import url("https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
+적용 후 검사 -> 네트워크 > spoqa 확인 // 폰트 적용이 안될 때
+
+.body
+font-family: 'spoqa han sans' -> 호출 해야 적용됨
+
+.menu-item-text
+font-weight: 700 -> spoqa han sans 에 bold로 적용된 것이 불려옴 
+
+***이미지 폰트의 텍스트화 
+
+---------------------------------------------------------------------오후----------------------------------------------------------------------------------
+
+단위
+px, em, rem, %
+vw, vh
+
+.body에 상속된 16px -> 자식 요소
+.member font-size: 1.5em 하면 
+
+font.html
+box$*3{box$} -> 중괄호는 텍스트노드
+
+body{
+  font-size:20px  ->고정된 크기에 적용이 용이
+  font-size:75%   -> 기존 브라우저 글자 크기 기준으로 16*0.75
+  font-size:0.75em  -> 상동
+  개별 매핑 ctrl+shift+G => h1
+
+  확인 => computed -> font-size(filtering)
+
+html 10px
+  body 1.5em
+  div 2em 하면
+  ***상속으로 인해서 상대 unit값이 영향 받을 수 있음 그래서 rem -> root만 고려함
+
+html 10px
+  body 1.5rem
+  div 2rem 하면 -> 20px (최신기술이라서 구형버전용 코드를 같이 적용하는게 좋음)       참고 saas -> css
+
+.html 10px
+.body 1.4
+
+.menu-item-text (얘네만!)
+크기 변경 1.6rem
+메뉴 텍스트에 그림자 효과 -> text shadow: 1px(x) 1px(y) 0 COLOR, -그림자 하나 추가 / 동일 형식- (오른쪽 하단에 그림자 처리) // 컴마 단위로 세트 추가할 수 있음 box-shadow도 가능.
+그림자를 이용한 윤곽체 생성 가능
+                                              keyword   codepen
+
+.menu-item-text:hover -> 마우스 포인터를 해당 영역에 올릴 때, 커서모양도 바꿀 수 있음 cursor속성 
+
+***배치***
+
+로고 배치 -> 어디를 선택하는지에 따라 padding / margin 선택
+
+.menu 
+  padding-left  -> 모든 메뉴 컨텐츠가 우측으로 들여써짐
+
+"float", flex, display-"inline-block", (GRID)
+
+메뉴 높이를 47로 픽스해서 부모가 높이 잃어버리는 것을 방지 할수 있음
+.menu-item
+  BGC skyblue
+  "height 47"
+
+hover 아래에
+.sub-menu{
+  BGC pink
+}
+
+이렇게 하고 float 처리하면 컨텐츠(sub-menu) 크기를 기준으로 float box가 생성됨
+.menu-item
+  BGC skyblue
+  float left
+
+hover 아래에
+.sub-menu{
+  BGC pink
+}
+
+p:a로 sub-menu를 레이어화 (position으로 layer화, 제자리에서 부웅뜸)
+sub-menu끼리 겹쳐짐 -> normal flow로 인해서 뒤에 오는 레이어가 앞에 것을 덮어씀 -> z-index로 조정 가능
+sub-menu는 감추자 -> sub-menu display none
+
+메뉴텍스트를 헤더박스(메뉴)의 중간에 배치
+.menu-item-text
+  line-height 45px
+  -> padding으로 하면? -> padding-top 10px ->안됨 ->inline 요소라서 패딩이 적용 안됨 -> display block으로 바꾸면? -> 패딩이 적용되나, 글자크기를 바꾸면 여백 크기도 조정해야 함
+  line-height는 줄바꿈되면 적용 어려움
+
+.menu-item-text
+  border-left 처리 -> inline box기 때문에 표시 부적절 -> display block 화 -> 부모영역 전체가 내 영역이 됨
+  block이니까 padding으로 메뉴와 보더 사이 넓히기 
+  border-left 흰 선 변경
+
+메뉴 텍스트 밑에 underline
+hover로 이동
+  border-bottom: 2px -> box 모델이라서 box 전체에 underline이 적용됨 -> 글자길이만큼 밑줄을 줄이자 -> span 요소한테 ::after 적용 -> 빈 after를 block화하면 글자 밑으로 떨어짐
+
+hover 위에
+.menu-item-text::after로 가상박스 생성, 배경색도 삽입 ->인라인이기 때문에 글자에만 배경색 -> 줄 바뀌면서 다음줄로. -> display block화 -> 배경색 검정, 컨텐츠 삭제 , 높이 지정 10px (블록 아니면 height 줄수 없음)
+
+.menu-item-text:hover::after -> hover일 때만 글자 yellow, underline 적용하자
+
+display none 했던 sub-menu로 가서,
+.sub-menu
+  display 제거 -> 브라우저에 서브메뉴 다시 돌아옴 -> 
+
+1번 메뉴에 접근해서 display none -> 
+menu-item:nth-child(1) .sub-menu {display none}
+menu-item:nth-child(2) .sub-menu {display none}
+menu-item:nth-child(3) .sub-menu {display none}
+menu-item:nth-child(4) .sub-menu {display none}
+menu-item:nth-child(5) .sub-menu {display none}
+menu-item:nth-child(6) .sub-menu {display none}
+
+menu-item:nth-child(1) .sub-menu {display block}
+menu-item:nth-child(2) .sub-menu {display none}
+menu-item:nth-child(3) .sub-menu {display none}
+menu-item:nth-child(4) .sub-menu {display none}
+menu-item:nth-child(5) .sub-menu {display none}
+menu-item:nth-child(6) .sub-menu {display none}
+
+서브메뉴 포지션 지정이 현재는 header를 기준으로 되어 있는데 간단하게 하기위해서 menu-item을 position relative
+sub-menu는 absolute로 적용하고 top 47, left 0 -> 부모 li를 기준으로 위치 지정됨
+sub-menu li의 display inline-block하면 -> 서브메뉴가 상위 속성의 크기의 영향을 받기 때문에 inline으로 표시되지 않음 (줄바꿈 된다-> 줄바꿈을 강제금지하자 -> )
+.sub-menu에서 white-space 처리 -> 부모크기를 넘더라도 줄 바꿈 안 함
+렬
+keyword   fontello
+
+
+아이콘 삽입
+@import url("fontello.css") -> 서브메뉴의 a 태그에 아이콘의 클래스 삽입 (미적용)
+다른 모든 서브메뉴에 삽입하려면? -> 클래스로 삽입하지 말고 css파일에서 
+.sub-menu a::before{삽입하고자 하는 아이콘의 content 삽입} -> 확인하면 브라우저에 반영안됨 sans 이기 때문에 -> 서브메뉴에서 font-family 선언 ->적용
+
+마우스 호버하면 아이콘 변경되도록 하기
+content 값이 변경되기를 원하는 sub-menu a::before 밑에서 -> sub-menu a:hover:before{원하는 컨텐츠}
+
+서브메뉴의 위치 조정
+a 태그의 여백 추가 -> sub-menu a 배경색 삽입 -> padding 적용하자 -> a가 인라인이니까 적용 안됨 -> inline-block 화 -> padding 할당 -> margin-right 할당 -> 박스 사이에 여백 할당
+
+cf.span > div 좋지 않음 div가 더 크기 때문에
+
+두번째 서브메뉴 보기
+nth-child(2) block화해서 확인 ~~ 나머지도 확인
+
+4번째부터는 헤더 밖으로 서브메뉴가 벗어남 -> 네번째 서브에서 left -150px -> 서브메뉴 4번에 sub-menu4 클래스를 추가하자 -> sub-menu4클래스에 left -150 -> 메뉴에 포함된 서브메뉴를 찾자 .menu .sub-menu로 바꾸게 되면 4번째의 서브메뉴 인라인박스가 헤더를 벗어남
+.menu .sub-menu 는 구체성 점수가 20 클래스가 2개이므로 -> 같은 점수일 때는 나중 선언 속성이 적용됨 -> ID>class>element ->그러나 html태그안에 style (inline style)이 최우선함 -> 사용 지양
+중요도 순위를 높일 수 있음 -> !important -> important는 가급적이면 동적인 interaction에서 다른 스타일보다 우선적으로 적용하고자 할때만 사용하자 -> 각 child에 left 0, 4번에 -150
+right 0하면 부모의 우측 끝에 정렬 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
