@@ -81,3 +81,44 @@ http://jigsaw.w3.org/css-validator/
 
 * 자스 동작원리
 https://poiemaweb.com/js-syntax-basics
+
+* 코드 참고할 수 있는 사이트
+코드펜
+
+
+* 목요일 참고 사이트
+
+https://www.w3schools.com/howto/howto_css_parallax.asp
+https://www.w3schools.com/cssref/pr_background-attachment.asp
+http://www.sbs.com.au/theboat/
+https://www.awwwards.com/30-great-websites-with-parallax-scrolling.html
+http://lea.verou.me/css3patterns/
+https://spoqa.github.io/spoqa-han-sans/ko-KR/
+https://codepen.io/search/pens?q=text%20shadow&page=1&order=popularity&depth=everything&show_forks=false
+https://fontawesome.com/icons?d=gallery
+https://codepen.io/atnyman/pen/cgGuL
+
+
+
+* flex box
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+(그런데 이 사이트 자체가 되게 좋다 다른 글도 볼 것)
+
+
+---
+## 애니메이션
+
+CSS 애니메이션 사용하기
+
+https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Animations/Using_CSS_animations
+
+애니메이션 문법
+https://developer.mozilla.org/ko/docs/Web/CSS/animation
+
+* easings.net
+https://easings.net/ko
+* Ceaser - CSS EASING ANIMATION TOOL
+https://matthewlein.com/tools/ceaser
+* CSS Animation (실습 완료) by codepen
+https://codepen.io/yamoo9/full/aYdaWw/
+
