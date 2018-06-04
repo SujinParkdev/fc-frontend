@@ -47,12 +47,11 @@ console.log(str);
 8
 
 var n = 0;
-var x = 0;
-while (n < 11) {
-  n++;
-  x += n;
-  if (n%2===0) {
-    console.log(x);
+
+while (n < 11) {  // n : 0 1 2 3 4 5 6 7 8 9 10
+  n++; // n : 1 2 3 4 5 6 7 8 9 10 11
+  if (n%2===0) { // n : 2 4 6 8 10 일때
+    console.log(n);
   }
 }
 
@@ -62,6 +61,22 @@ while (n < 11) {
 5
 3
 1
+
+홀수만 어레이에 넣고
+포문 돌려서 순서대로 출력. (초기값을 10으로 주고 감소)
+
+var find_odd = 0;
+var odd_list = [];
+while (find_odd<10){
+  find_odd++;
+  if (find_odd%2===1){
+    odd_list = find_odd;
+  };
+}
+for(i=10; 0<i<10; i--){
+  console.log(odd_list[i]);
+}
+
 #6. for 문을 사용하여 0부터 10미만의 정수의 합을 출력하시오
 45
 #7. 1부터 20까지의 정수 중에서 2 또는 3의 배수가 아닌 수의 총합을 구하시오.
