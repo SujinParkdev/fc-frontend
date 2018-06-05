@@ -122,3 +122,10 @@ https://matthewlein.com/tools/ceaser
 * CSS Animation (실습 완료) by codepen
 https://codepen.io/yamoo9/full/aYdaWw/
 
+
+---
+## JavaScript
+
+REST APT : backend 부분도 frontend도 알아야 한다. 알아야 요청해는 걸 알고 응답하지!
+
+정규표현식은 자스랑 아에 다른 언어. 어렵. 그러나 쓸 부분은 알아야 한다.
