@@ -25,12 +25,12 @@
 [06 로그인 박스 만들기](https://github.com/SujinParkdev/fc-frontend/blob/master/2HTML_CSS_%EA%B9%80%EB%8D%B0%EB%A0%88%EC%82%AC/06-180521%20%EB%A1%9C%EA%B7%B8%EC%9D%B8%EB%B0%95%EC%8A%A4.pdf)<br>
 [07 Flexable web layout and Grid system](https://github.com/SujinParkdev/fc-frontend/blob/master/2HTML_CSS_%EA%B9%80%EB%8D%B0%EB%A0%88%EC%82%AC/07-180522(%ED%99%94).pdf)<br>
 [08 공지사항 섹션 만들기](https://github.com/SujinParkdev/fc-frontend/blob/master/2HTML_CSS_%EA%B9%80%EB%8D%B0%EB%A0%88%EC%82%AC/08-180523(%EC%88%98)-%EA%B3%B5%EC%A7%80%EC%82%AC%ED%95%AD.pdf)<br>
-[09 버튼 이미지처리하면서 레이블 달아주기](https://github.com/SujinParkdev/fc-frontend/blob/master/2HTML_CSS_%EA%B9%80%EB%8D%B0%EB%A0%88%EC%82%AC/09-180524(%EB%AA%A9).pdf)
-[10 반응형 웹 디자인](https://github.com/SujinParkdev/fc-frontend/blob/master/2HTML_CSS_%EA%B9%80%EB%8D%B0%EB%A0%88%EC%82%AC/10-180525(%EA%B8%88).pdf)
+[09 버튼 이미지처리하면서 레이블 달아주기](https://github.com/SujinParkdev/fc-frontend/blob/master/2HTML_CSS_%EA%B9%80%EB%8D%B0%EB%A0%88%EC%82%AC/09-180524(%EB%AA%A9).pdf)<br>
+[10 반응형 웹 디자인](https://github.com/SujinParkdev/fc-frontend/blob/master/2HTML_CSS_%EA%B9%80%EB%8D%B0%EB%A0%88%EC%82%AC/10-180525(%EA%B8%88).pdf)<br>
 
 3. JavaScript(이웅모)<br>
 [01 JavaScript OT, Syntax Basic, Expression, Variable, Operator](https://github.com/SujinParkdev/fc-frontend/blob/master/3JavaScript(%EC%9D%B4%EC%9B%85%EB%AA%A8)/01_180528_OT.md)<br>
-[02 Data type and Variable, Dynamic Typing, Short-Circuit Evaluation, if문, switch문](https://github.com/SujinParkdev/fc-frontend/blob/master/3JavaScript(%EC%9D%B4%EC%9B%85%EB%AA%A8)/02_180529.md)<br>
+[02 Data type and Variable, Dynamic Typing, if문, switch문](https://github.com/SujinParkdev/fc-frontend/blob/master/3JavaScript(%EC%9D%B4%EC%9B%85%EB%AA%A8)/02_180529.md)<br>
 [03 ]()<br>
 [04 Call-by-Value, Call-by-Reference, Function Property, Prototype](https://github.com/SujinParkdev/fc-frontend/blob/master/3JavaScript(%EC%9D%B4%EC%9B%85%EB%AA%A8)/04_180604.md)<br>
 [05 JavaScript Built-in Object](https://github.com/SujinParkdev/fc-frontend/blob/master/3JavaScript(%EC%9D%B4%EC%9B%85%EB%AA%A8)/05_180605.md)<br>
