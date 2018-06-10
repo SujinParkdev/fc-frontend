@@ -368,7 +368,7 @@ a
 
 <pre><code>const i1 =parseInt("120vv", 10); 
 i1 
-//십진수로 출력하여 120 출력 </pre><<pre><code>code>
+//십진수로 출력하여 120 출력 </pre></code>
 
 <pre><code>const i2 = parseInst("3a", 16); 
 //16진수로 변환해서 또다시 10진수로 변환  
@@ -493,7 +493,8 @@ r1 = y-- + y--;
 //13이 출력. 왜?? 모르겠음 ㅠㅠ
 //제일 처음 y는 8이었는데 r1으</pre></code>
 
-<앵귤러>
+
+앵귤러
 ========
 
 npm사용하는 법
@@ -528,7 +529,7 @@ vscode로 코딩할 것
 test_web_app에서 index.html로 새파일을 만들어준다
 
 [index.html]
-
+```
 <!doctype html>
 <html>
 <head>
@@ -560,7 +561,7 @@ $(document).ready(function(){
 
 </body>
 </html>
-
+```
 앞에서 만들었던 제이쿼리패키지를 불러오려고 스크립트 태그를 만든 것.
 우리가 같은 노드모듈 안에 있는 jquery.mon.js가 필요해.
 
