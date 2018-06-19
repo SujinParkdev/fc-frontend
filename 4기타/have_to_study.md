@@ -129,3 +129,24 @@ https://codepen.io/yamoo9/full/aYdaWw/
 REST APT : backend 부분도 frontend도 알아야 한다. 알아야 요청해는 걸 알고 응답하지!
 
 정규표현식은 자스랑 아에 다른 언어. 어렵. 그러나 쓸 부분은 알아야 한다.
+
+실행컨텍스트 배운지 일년이 넘으면
+http://dmitrysoshnikov.com/ecmascript/chapter-1-execution-contexts/
+http://dmitrysoshnikov.com/ecmascript/chapter-2-variable-object/
+http://dmitrysoshnikov.com/ecmascript/chapter-3-this/
+http://dmitrysoshnikov.com/ecmascript/chapter-4-scope-chain/
+http://dmitrysoshnikov.com/ecmascript/chapter-5-functions/
+http://dmitrysoshnikov.com/ecmascript/chapter-6-closures/
+http://davidshariff.com/blog/what-is-the-execution-context-in-javascript/
+http://jibbering.com/faq/notes/closures/
+매개변수(parameter)와 인수(argument)
+이걸 꼭 읽어볼 것
+
+
+HTTP 책 따로 사서 꼭 읽어봐라. 웹프로그래머로서 기본소양이다.
+
+---
+문서객체모델 DOM Core : DOM methods and properties
+
+강사님 추천! 정리 잘되어 있다.
+https://quirksmode.org/dom/core/
