@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" name="fname" placeholder="enter todo" class="userInput">
+  <button class="add">Add</button>
+
+  <ul class="todoList">
+    <li></li>
+  </ul>
+
+  <script>
+  var userInput = document.querySelector('.userInput');
+  var add = document.querySelector('.add');
+  var todoList = document.querySelector('.todoList');
+
+  add.addEventListener('click', function() {
+    todoList.innerHTML += '<li><span>' + userInput.value + '</span><button>delete</button></li>'
+    userInput = '';
+  });
+
+  userInput.addEventListener('keyup', function(e) {
+    if (e.keyCode === 13) { 
+      return userInput.value = '' ;
+    }; 
+  });
+
+  todoList.addEventListener('click',function(e) {
+    this.removeChild(e.target.parentNode);
+  })
+
+  
+  </script>
+  
+</body>
+</html>
+
