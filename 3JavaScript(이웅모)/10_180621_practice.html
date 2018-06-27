@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko-kr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,36 +7,59 @@
   <title>Document</title>
 </head>
 <body>
-  <input type="text" name="fname" placeholder="enter todo" class="userInput">
-  <button class="add">Add</button>
+  <input type="text" placeholder="enter todo">
+  <button class="add-btn">Add</button>
 
-  <ul class="todoList">
-    <li></li>
-  </ul>
-
+  <ul></ul>
   <script>
-  var userInput = document.querySelector('.userInput');
-  var add = document.querySelector('.add');
-  var todoList = document.querySelector('.todoList');
+    var todos = [];
 
-  add.addEventListener('click', function() {
-    todoList.innerHTML += '<li><span>' + userInput.value + '</span><button>delete</button></li>'
-    userInput = '';
-  });
+    var addBtn = document.querySelector('.add-btn');
+    var todoInput = document.querySelector('input');
+    var list = document.querySelector('ul');
 
-  userInput.addEventListener('keyup', function(e) {
-    if (e.keyCode === 13) { 
-      return userInput.value = '' ;
-    }; 
-  });
+    function addTodo(todo) {
+      if (!todo) return;
+      // list.innerHTML += '<li><span>' + todo + '</span> <button>del</button></li>';
+      list.innerHTML += '<li id ="' + todo.id + '"><input type="checkbox"' + checked + '><span>' + todo.content +'</span> <button>del</button></li>';
 
-  todoList.addEventListener('click',function(e) {
-    this.removeChild(e.target.parentNode);
-  })
+    }
 
-  
+    addBtn.addEventListener('click', function () {
+      addTodo(todoInput.value);
+      todoInput.value = '';
+    });
+
+    todoInput.addEventListener('keyup', function (e) {
+      if (e.keyCode !== 13) return;
+      addTodo(this.value);
+      this.value = '';
+    });
+
+    list.addEventListener('click', function (e) {
+      if (e.target.nodeName !== 'BUTTON') return;
+
+
+
+      // this.removeChild(e.target.parentNode);
+    });
+
+    window.addEventListener('load', function () {
+      // 서버로부터 데이터를 취득
+      todos = [
+        { id: 1, content: 'HTML', completed: true },
+        { id: 2, content: 'CSS', completed: false },
+        { id: 300, content: 'JS', completed: true },
+        { id: 4, content: 'Angulae', completed: false }
+      ];
+
+      // todos 배열을 사용하여 html을 생성하여 반영한다.
+      todos.forEach(function (todo) {
+        // console.log(todo.id);
+        var checked = todo.completed ? 'checked' : '';
+        list.innerHTML += '<li id ="' + todo.id + '"><input type="checkbox"' + checked + '><span>' + todo.content +'</span> <button>del</button></li>';
+      });
+    });
   </script>
-  
 </body>
 </html>
-
