@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <input class="userInput" type="text" placeholder="enter todo">
+  <button class="add-btn">Add</button>
+  <ul>
+  <li id ="1"><input type="checkbox"><span>java</span> <button>del</button></li>;
+  <li id ="2"><input type="checkbox"><span>angular</span> <button>del</button></li>;
+  </ul>
+  <script>
+    var todos = [];
+    var userInput = document.querySelector('.userInput');
+    var addBtn = document.querySelector('.add-btn');
+    var list = document.querySelector('ul');
+
+
+    function addTodo(todo) {
+      
+      list.innerHTML += '<li id ="' + todo.id + '"><input type="checkbox"' + checked + '><span>' + todo.content +'</span> <button>del</button></li>';
+    };
+
+    addBtn.addEventListener('click', addTodo);
+
+  </script>
+</body>
+</html>
