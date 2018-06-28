@@ -7,15 +7,12 @@ var todos = [
 // 1. todos의 각 요소 중, id 프로퍼티의 값만을 추출한 배열을 생성하는 함수를 작성하라.
 // => [3, 2, 1]
 
-var getIds = todos.map(function() {
-  return this.
+var getIds = todos.map(function(todo) {
+  return getTodosId = todo.id;
 })
-
-// console.log(getIds());
 
 // 2. 1에서 생성한 배열의 최대값을 구하는 함수를 작성하라.
 // => 3
-
 
 
 
@@ -26,6 +23,22 @@ var getIds = todos.map(function() {
 //   { id: 2, content: 'CSS', completed: true },
 //   { id: 1, content: 'Javascript', completed: false }
 // ];
+
+var todos = [
+  { id: 3, content: 'HTML', completed: false },
+  { id: 2, content: 'CSS', completed: true },
+  { id: 1, content: 'Javascript', completed: false }
+];
+
+
+var newTodo = 
+	[{ id: 4, content: 'Test', completed: false }];
+
+function addTodo(todo) {
+return newTodo.concat(todos); 
+};
+
+console.log(addTodo(todos));
 
 
 // 4. todos에서 id가 4인 요소를 삭제하는 함수를 작성하라
@@ -64,4 +77,3 @@ console.log(truetodos)
 
 
 // 7. todos에서 완료(completed: true)한 할일의 갯수를 구하는 함수를 작성하라
-
